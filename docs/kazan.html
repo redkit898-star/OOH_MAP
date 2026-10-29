@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_dd4fc0f79fa70ece7cbc52e89a5eb9cd {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_dd4fc0f79fa70ece7cbc52e89a5eb9cd" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_dd4fc0f79fa70ece7cbc52e89a5eb9cd = L.map(
+                "map_dd4fc0f79fa70ece7cbc52e89a5eb9cd",
+                {
+                    center: [55.80869833328037, 49.149840329149434],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": true,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_dd4fc0f79fa70ece7cbc52e89a5eb9cd);
+
+            
+
+        
+    
+            var tile_layer_1e797036b2b080b18b9f0ce58202a6b5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_1e797036b2b080b18b9f0ce58202a6b5.addTo(map_dd4fc0f79fa70ece7cbc52e89a5eb9cd);
+        
+    
+            var marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a = L.markerClusterGroup(
+                {
+  "maxClusterRadius": 55,
+}
+            );
+        
+    
+            var marker_a6aa2a8717ba998af7495caaa02d4dc7 = L.marker(
+                [55.817202782308, 49.094326815932],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_e9d749c476b88f28b5dd4ee68b537d9c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_524fa9ebd43834a60ec21b24beabd55a = $(`<div id="html_524fa9ebd43834a60ec21b24beabd55a" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Мулланура Вахитова, возле дома №79 по ул.Декабристов, супермаркет Перекресток</div></div>`)[0];
+                popup_e9d749c476b88f28b5dd4ee68b537d9c.setContent(html_524fa9ebd43834a60ec21b24beabd55a);
+            
+        
+
+        marker_a6aa2a8717ba998af7495caaa02d4dc7.bindPopup(popup_e9d749c476b88f28b5dd4ee68b537d9c)
+        ;
+
+        
+    
+    
+            marker_a6aa2a8717ba998af7495caaa02d4dc7.bindTooltip(
+                `<div>
+                     ул. Мулланура Вахитова, возле дома №79 по ул.Декабристов, супермаркет Перекресток
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1fca6c59b7c6b2d801e6bcfa6b4ec57f = L.marker(
+                [55.806156167387, 49.18376326561],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_e2d508211a629d15ac9eab2581441af2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f022c49f89bb698135971d17af323798 = $(`<div id="html_f022c49f89bb698135971d17af323798" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Сибирский Тракт д.9/15</div></div>`)[0];
+                popup_e2d508211a629d15ac9eab2581441af2.setContent(html_f022c49f89bb698135971d17af323798);
+            
+        
+
+        marker_1fca6c59b7c6b2d801e6bcfa6b4ec57f.bindPopup(popup_e2d508211a629d15ac9eab2581441af2)
+        ;
+
+        
+    
+    
+            marker_1fca6c59b7c6b2d801e6bcfa6b4ec57f.bindTooltip(
+                `<div>
+                     Сибирский Тракт д.9/15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cb3fc4701551518ef3da221479dba655 = L.marker(
+                [55.847437589255, 48.911802379996],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_833af8c60b448be1a31100a0fef4186d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0f0c4cd0eb2b9907fe0fcbc8b1955ac6 = $(`<div id="html_0f0c4cd0eb2b9907fe0fcbc8b1955ac6" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Залесная напротив дома №4, на въезд  вгород</div></div>`)[0];
+                popup_833af8c60b448be1a31100a0fef4186d.setContent(html_0f0c4cd0eb2b9907fe0fcbc8b1955ac6);
+            
+        
+
+        marker_cb3fc4701551518ef3da221479dba655.bindPopup(popup_833af8c60b448be1a31100a0fef4186d)
+        ;
+
+        
+    
+    
+            marker_cb3fc4701551518ef3da221479dba655.bindTooltip(
+                `<div>
+                     ул. Залесная напротив дома №4, на въезд  вгород
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_71fb3d3b5682341780a05b7252a41170 = L.marker(
+                [55.907329849236, 49.302633404732],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_bbf68c530b07420ce3d5f0c727c82a3e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bc6b5d89918958d402eaa83983cb6553 = $(`<div id="html_bc6b5d89918958d402eaa83983cb6553" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Жилой массив Высокая гора, Большая Красная 35 Б</div></div>`)[0];
+                popup_bbf68c530b07420ce3d5f0c727c82a3e.setContent(html_bc6b5d89918958d402eaa83983cb6553);
+            
+        
+
+        marker_71fb3d3b5682341780a05b7252a41170.bindPopup(popup_bbf68c530b07420ce3d5f0c727c82a3e)
+        ;
+
+        
+    
+    
+            marker_71fb3d3b5682341780a05b7252a41170.bindTooltip(
+                `<div>
+                     Жилой массив Высокая гора, Большая Красная 35 Б
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3c0d71c9fdb45d54037f24906dd9121c = L.marker(
+                [55.82660304977, 49.02853476682],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_4bb31591236ffbae6ff7d7617340f198 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_684ea49160830aeab0bf532e8001a913 = $(`<div id="html_684ea49160830aeab0bf532e8001a913" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Горьковское Шоссе, возле дома №113, гипермаркет Мегастрой</div></div>`)[0];
+                popup_4bb31591236ffbae6ff7d7617340f198.setContent(html_684ea49160830aeab0bf532e8001a913);
+            
+        
+
+        marker_3c0d71c9fdb45d54037f24906dd9121c.bindPopup(popup_4bb31591236ffbae6ff7d7617340f198)
+        ;
+
+        
+    
+    
+            marker_3c0d71c9fdb45d54037f24906dd9121c.bindTooltip(
+                `<div>
+                     Горьковское Шоссе, возле дома №113, гипермаркет Мегастрой
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_135fad015d91abf97f6bbb6d72db452a = L.marker(
+                [55.81489829, 49.18526444],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_5e93dc2dee05d7b0a04661b9e5fb79e9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_badb62ec4328c78f13957060af83cb80 = $(`<div id="html_badb62ec4328c78f13957060af83cb80" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Арбузова, 5</div></div>`)[0];
+                popup_5e93dc2dee05d7b0a04661b9e5fb79e9.setContent(html_badb62ec4328c78f13957060af83cb80);
+            
+        
+
+        marker_135fad015d91abf97f6bbb6d72db452a.bindPopup(popup_5e93dc2dee05d7b0a04661b9e5fb79e9)
+        ;
+
+        
+    
+    
+            marker_135fad015d91abf97f6bbb6d72db452a.bindTooltip(
+                `<div>
+                     Арбузова, 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5683c62d43f843e823ba400a4e143f0c = L.marker(
+                [55.723446931587, 49.328084802593],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_4f544d2ca4cb427ecf030400125b33f8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_30de02a1d959586c4d5ff37aa29d97bb = $(`<div id="html_30de02a1d959586c4d5ff37aa29d97bb" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Олимпийская ул, 8 д (Куюки, по направлению в ЖК Светлый)</div></div>`)[0];
+                popup_4f544d2ca4cb427ecf030400125b33f8.setContent(html_30de02a1d959586c4d5ff37aa29d97bb);
+            
+        
+
+        marker_5683c62d43f843e823ba400a4e143f0c.bindPopup(popup_4f544d2ca4cb427ecf030400125b33f8)
+        ;
+
+        
+    
+    
+            marker_5683c62d43f843e823ba400a4e143f0c.bindTooltip(
+                `<div>
+                     Олимпийская ул, 8 д (Куюки, по направлению в ЖК Светлый)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_793070567431dbd879354927175a4f8c = L.marker(
+                [55.74814438, 49.19009275],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_345367b2e976c616ebfbe4844ca58563 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8627645e121002757facefb4c00dd735 = $(`<div id="html_8627645e121002757facefb4c00dd735" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Хусаина Мавлютова, д.21, близость к светофору</div></div>`)[0];
+                popup_345367b2e976c616ebfbe4844ca58563.setContent(html_8627645e121002757facefb4c00dd735);
+            
+        
+
+        marker_793070567431dbd879354927175a4f8c.bindPopup(popup_345367b2e976c616ebfbe4844ca58563)
+        ;
+
+        
+    
+    
+            marker_793070567431dbd879354927175a4f8c.bindTooltip(
+                `<div>
+                     ул. Хусаина Мавлютова, д.21, близость к светофору
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_aecb27b41c6e76222d70092642df57e0 = L.marker(
+                [55.842892000351, 49.146555662155],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_82e27532eb4e884b9f5994ed721483ce = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_052d5d70391eff2e489ace72eba7d4b1 = $(`<div id="html_052d5d70391eff2e489ace72eba7d4b1" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Гаврилова участок дороги при движении от ул.Фатыха Амирхана в сторону ул.Адоратского, между домами №53 и №55 по ул.Адоратского, недалеко от продуктового рынка</div></div>`)[0];
+                popup_82e27532eb4e884b9f5994ed721483ce.setContent(html_052d5d70391eff2e489ace72eba7d4b1);
+            
+        
+
+        marker_aecb27b41c6e76222d70092642df57e0.bindPopup(popup_82e27532eb4e884b9f5994ed721483ce)
+        ;
+
+        
+    
+    
+            marker_aecb27b41c6e76222d70092642df57e0.bindTooltip(
+                `<div>
+                     ул. Гаврилова участок дороги при движении от ул.Фатыха Амирхана в сторону ул.Адоратского, между домами №53 и №55 по ул.Адоратского, недалеко от продук
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d6765115f68060d7c2de0ece1ae6bac1 = L.marker(
+                [55.75234584293, 49.230090379715],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_4c0b99c7cb546bc92436aace6b2209d8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d50e2ba34c5001b52d950f12c5c3a6e5 = $(`<div id="html_d50e2ba34c5001b52d950f12c5c3a6e5" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Юлиуса Фучика, при движении от ул.Академика Завойского в сторону ул.Кул Гали, гипермаркет Эссен</div></div>`)[0];
+                popup_4c0b99c7cb546bc92436aace6b2209d8.setContent(html_d50e2ba34c5001b52d950f12c5c3a6e5);
+            
+        
+
+        marker_d6765115f68060d7c2de0ece1ae6bac1.bindPopup(popup_4c0b99c7cb546bc92436aace6b2209d8)
+        ;
+
+        
+    
+    
+            marker_d6765115f68060d7c2de0ece1ae6bac1.bindTooltip(
+                `<div>
+                     ул. Юлиуса Фучика, при движении от ул.Академика Завойского в сторону ул.Кул Гали, гипермаркет Эссен
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4653d404832b5c36ad0d07f1078ad780 = L.marker(
+                [55.76872182, 49.21088892],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_115e4161b18cb1409e0e9fb783025c70 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ea415ec227c55ec36bbfe6d090af701c = $(`<div id="html_ea415ec227c55ec36bbfe6d090af701c" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Родины, д.43, ТЦ Южный</div></div>`)[0];
+                popup_115e4161b18cb1409e0e9fb783025c70.setContent(html_ea415ec227c55ec36bbfe6d090af701c);
+            
+        
+
+        marker_4653d404832b5c36ad0d07f1078ad780.bindPopup(popup_115e4161b18cb1409e0e9fb783025c70)
+        ;
+
+        
+    
+    
+            marker_4653d404832b5c36ad0d07f1078ad780.bindTooltip(
+                `<div>
+                     ул. Родины, д.43, ТЦ Южный
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0c8b59c88a926f5108c8931585724cba = L.marker(
+                [55.839536472077, 49.052399396896],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_a21a8a68f5ad8fb773ca77df0cec9b3e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_193c22872606453ebaf2896050570930 = $(`<div id="html_193c22872606453ebaf2896050570930" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Васильченко при движении от ул.Гагарина в сторону ул.Хлебозаводская, остановка Магазин Стройматериалы</div></div>`)[0];
+                popup_a21a8a68f5ad8fb773ca77df0cec9b3e.setContent(html_193c22872606453ebaf2896050570930);
+            
+        
+
+        marker_0c8b59c88a926f5108c8931585724cba.bindPopup(popup_a21a8a68f5ad8fb773ca77df0cec9b3e)
+        ;
+
+        
+    
+    
+            marker_0c8b59c88a926f5108c8931585724cba.bindTooltip(
+                `<div>
+                     ул. Васильченко при движении от ул.Гагарина в сторону ул.Хлебозаводская, остановка Магазин Стройматериалы
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f54b5e2ffaa281b390e9e198f028ab69 = L.marker(
+                [55.82117588296524, 49.05107975006104],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_2d117d1afe73a11887697b2b3e0f7ed5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ac34f733c1c8a32bdc2aff84ce234be3 = $(`<div id="html_ac34f733c1c8a32bdc2aff84ce234be3" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Фрунзе напротив дома №15, через дорогу, магазин Верный, близость к светофору</div></div>`)[0];
+                popup_2d117d1afe73a11887697b2b3e0f7ed5.setContent(html_ac34f733c1c8a32bdc2aff84ce234be3);
+            
+        
+
+        marker_f54b5e2ffaa281b390e9e198f028ab69.bindPopup(popup_2d117d1afe73a11887697b2b3e0f7ed5)
+        ;
+
+        
+    
+    
+            marker_f54b5e2ffaa281b390e9e198f028ab69.bindTooltip(
+                `<div>
+                     ул. Фрунзе напротив дома №15, через дорогу, магазин Верный, близость к светофору
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_104e35831df757639d17253c19a56a0d = L.marker(
+                [55.776997782685, 49.131589531975],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_4b4e5549c392e8a0654c74d9ded0f9b1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_1f05cf9eef75b43f66bafb78ef1d4963 = $(`<div id="html_1f05cf9eef75b43f66bafb78ef1d4963" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул.Туфана Миннуллина, д.15/8Б, ТЦ Сувар Плаза</div></div>`)[0];
+                popup_4b4e5549c392e8a0654c74d9ded0f9b1.setContent(html_1f05cf9eef75b43f66bafb78ef1d4963);
+            
+        
+
+        marker_104e35831df757639d17253c19a56a0d.bindPopup(popup_4b4e5549c392e8a0654c74d9ded0f9b1)
+        ;
+
+        
+    
+    
+            marker_104e35831df757639d17253c19a56a0d.bindTooltip(
+                `<div>
+                     ул.Туфана Миннуллина, д.15/8Б, ТЦ Сувар Плаза
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d02b9fb9bbe1b2805617ffbb7a40567f = L.marker(
+                [55.862276319419, 49.219032310758],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_025a28dd8534035c8ea8a426bc2c97b1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_75bd158479d3ff6ba973d8f52daf92ee = $(`<div id="html_75bd158479d3ff6ba973d8f52daf92ee" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Мира между домами №43 и №41, близость к светофору</div></div>`)[0];
+                popup_025a28dd8534035c8ea8a426bc2c97b1.setContent(html_75bd158479d3ff6ba973d8f52daf92ee);
+            
+        
+
+        marker_d02b9fb9bbe1b2805617ffbb7a40567f.bindPopup(popup_025a28dd8534035c8ea8a426bc2c97b1)
+        ;
+
+        
+    
+    
+            marker_d02b9fb9bbe1b2805617ffbb7a40567f.bindTooltip(
+                `<div>
+                     ул. Мира между домами №43 и №41, близость к светофору
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4eb402e166771df9651a10012d029eac = L.marker(
+                [55.855995880201, 49.084998281103],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_9984ec1f8c9a903180a148f49b5f0c7b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d5fd7d822b83eafa9e9e71c5735f59c4 = $(`<div id="html_d5fd7d822b83eafa9e9e71c5735f59c4" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Копылова, станция метро Авиастроительная</div></div>`)[0];
+                popup_9984ec1f8c9a903180a148f49b5f0c7b.setContent(html_d5fd7d822b83eafa9e9e71c5735f59c4);
+            
+        
+
+        marker_4eb402e166771df9651a10012d029eac.bindPopup(popup_9984ec1f8c9a903180a148f49b5f0c7b)
+        ;
+
+        
+    
+    
+            marker_4eb402e166771df9651a10012d029eac.bindTooltip(
+                `<div>
+                     ул. Копылова, станция метро Авиастроительная
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_50ddf72f3cb0d726edc3efb05ad2c394 = L.marker(
+                [55.763045266592, 49.231267629261],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_1c5f9019f48d3bd619e97e397282beee = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7f47f3253de9c5877f5d56796d7e1542 = $(`<div id="html_7f47f3253de9c5877f5d56796d7e1542" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Юлиуса Фучика д.115, ТРЦ Франт</div></div>`)[0];
+                popup_1c5f9019f48d3bd619e97e397282beee.setContent(html_7f47f3253de9c5877f5d56796d7e1542);
+            
+        
+
+        marker_50ddf72f3cb0d726edc3efb05ad2c394.bindPopup(popup_1c5f9019f48d3bd619e97e397282beee)
+        ;
+
+        
+    
+    
+            marker_50ddf72f3cb0d726edc3efb05ad2c394.bindTooltip(
+                `<div>
+                     ул. Юлиуса Фучика д.115, ТРЦ Франт
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cd2b27a4d6518c201df4bae16ac5908c = L.marker(
+                [55.83585913108211, 49.19512757136678],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_e8b4df32418d97516b46a32e27ff58bd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_319eb79b57697a056b92e3cb0ea12b13 = $(`<div id="html_319eb79b57697a056b92e3cb0ea12b13" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Сибирский Тракт Напротив дома №47и, через дорогу, автосалон Кан Авто</div></div>`)[0];
+                popup_e8b4df32418d97516b46a32e27ff58bd.setContent(html_319eb79b57697a056b92e3cb0ea12b13);
+            
+        
+
+        marker_cd2b27a4d6518c201df4bae16ac5908c.bindPopup(popup_e8b4df32418d97516b46a32e27ff58bd)
+        ;
+
+        
+    
+    
+            marker_cd2b27a4d6518c201df4bae16ac5908c.bindTooltip(
+                `<div>
+                     Сибирский Тракт Напротив дома №47и, через дорогу, автосалон Кан Авто
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2216e29b741f3406c2c18d1651fedd3d = L.marker(
+                [55.79779937, 49.24337291],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_a1d2a12eaae8bd170cad96788f9c3c5e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_31e697e7139029868e6b1a78a23986a9 = $(`<div id="html_31e697e7139029868e6b1a78a23986a9" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Мамадышский Тракт при движении от ул.Школьная в сторону ул.Александра Курынова, гипермаркет Selgros</div></div>`)[0];
+                popup_a1d2a12eaae8bd170cad96788f9c3c5e.setContent(html_31e697e7139029868e6b1a78a23986a9);
+            
+        
+
+        marker_2216e29b741f3406c2c18d1651fedd3d.bindPopup(popup_a1d2a12eaae8bd170cad96788f9c3c5e)
+        ;
+
+        
+    
+    
+            marker_2216e29b741f3406c2c18d1651fedd3d.bindTooltip(
+                `<div>
+                     Мамадышский Тракт при движении от ул.Школьная в сторону ул.Александра Курынова, гипермаркет Selgros
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_218377a3d6e23e69b1e010f65f5e4323 = L.marker(
+                [55.75515118, 49.13029008],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_c1480af009ddc2ce22fc8875782e8f8d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_547209ebbd6e0b3ccc37582078b1cff1 = $(`<div id="html_547209ebbd6e0b3ccc37582078b1cff1" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Техническая, д.27, остановка Татмебельбыт</div></div>`)[0];
+                popup_c1480af009ddc2ce22fc8875782e8f8d.setContent(html_547209ebbd6e0b3ccc37582078b1cff1);
+            
+        
+
+        marker_218377a3d6e23e69b1e010f65f5e4323.bindPopup(popup_c1480af009ddc2ce22fc8875782e8f8d)
+        ;
+
+        
+    
+    
+            marker_218377a3d6e23e69b1e010f65f5e4323.bindTooltip(
+                `<div>
+                     ул. Техническая, д.27, остановка Татмебельбыт
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_90ffaf771713cd42f18f3e023333bcfc = L.marker(
+                [55.830266090528, 48.993631499853],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_fb95a7d0321aad317c3f05353a21ae97 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eb0ad3fd12baf41542b4027fdb75a764 = $(`<div id="html_eb0ad3fd12baf41542b4027fdb75a764" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Горьковское Шоссе При движении от ул.Залесная, на въезд в город</div></div>`)[0];
+                popup_fb95a7d0321aad317c3f05353a21ae97.setContent(html_eb0ad3fd12baf41542b4027fdb75a764);
+            
+        
+
+        marker_90ffaf771713cd42f18f3e023333bcfc.bindPopup(popup_fb95a7d0321aad317c3f05353a21ae97)
+        ;
+
+        
+    
+    
+            marker_90ffaf771713cd42f18f3e023333bcfc.bindTooltip(
+                `<div>
+                     Горьковское Шоссе При движении от ул.Залесная, на въезд в город
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a4d3479d703688b1e8ddbaa042fadad2 = L.marker(
+                [55.787592737686, 49.155277953373],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_e75405472e843526ab9d90ebd56e473c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_614ea49512558e4e6bac86840aea77b0 = $(`<div id="html_614ea49512558e4e6bac86840aea77b0" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Достоевского ул., 66/17 х Зинина ул.</div></div>`)[0];
+                popup_e75405472e843526ab9d90ebd56e473c.setContent(html_614ea49512558e4e6bac86840aea77b0);
+            
+        
+
+        marker_a4d3479d703688b1e8ddbaa042fadad2.bindPopup(popup_e75405472e843526ab9d90ebd56e473c)
+        ;
+
+        
+    
+    
+            marker_a4d3479d703688b1e8ddbaa042fadad2.bindTooltip(
+                `<div>
+                     Достоевского ул., 66/17 х Зинина ул.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c0f2ea54bd0d36e0a4d967c1d22d6a4f = L.marker(
+                [55.81918684938901, 49.14622306823731],
+                {
+}
+            ).addTo(marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a);
+        
+    
+        var popup_ea55290a1812dcf85f341d08196cdba8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d30da6901155a77ca928641968aad70f = $(`<div id="html_d30da6901155a77ca928641968aad70f" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>ул. Чистопольская, Напротив дома №71а, через дорогу</div></div>`)[0];
+                popup_ea55290a1812dcf85f341d08196cdba8.setContent(html_d30da6901155a77ca928641968aad70f);
+            
+        
+
+        marker_c0f2ea54bd0d36e0a4d967c1d22d6a4f.bindPopup(popup_ea55290a1812dcf85f341d08196cdba8)
+        ;
+
+        
+    
+    
+            marker_c0f2ea54bd0d36e0a4d967c1d22d6a4f.bindTooltip(
+                `<div>
+                     ул. Чистопольская, Напротив дома №71а, через дорогу
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            marker_cluster_d4a4c4b8962019638e22ca8c621b6a2a.addTo(map_dd4fc0f79fa70ece7cbc52e89a5eb9cd);
+        
+    
+            map_dd4fc0f79fa70ece7cbc52e89a5eb9cd.fitBounds(
+                [[55.723446931587, 48.911802379996], [55.907329849236, 49.328084802593]],
+                {}
+            );
+        
+</script>
+</html>
