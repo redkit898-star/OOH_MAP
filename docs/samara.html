@@ -1,0 +1,1627 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4dcb2d69e3d88df6cfbf81e90e750c91 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+    <style>
+      .osm-credit-widget {position:fixed;bottom:8px;right:8px;z-index:9999;
+          display:flex;align-items:center;gap:6px;font:12px Arial,sans-serif;}
+      .osm-credit-text {background:rgba(255,255,255,.95);border-radius:4px;
+          padding:6px 9px;box-shadow:0 1px 5px #0003;}
+      .osm-credit-text a {color:#225d9a;text-decoration:none;}
+      .osm-credit-widget button {cursor:pointer;width:26px;height:26px;
+          border:1px solid #bbb;border-radius:50%;background:#fff;
+          color:#333;font-weight:bold;font-size:16px;box-shadow:0 1px 5px #0003;}
+      .osm-credit-text.osm-hidden {display:none;}
+    </style>
+    <div class="osm-credit-widget" role="group" aria-label="Информация об источнике карты">
+      <div class="osm-credit-text" id="osm-credit-text"><a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener noreferrer">OpenStreetMap</a></div>
+      <button type="button" id="osm-credit-button" aria-label="Показать сведения о карте" aria-expanded="true">i</button>
+    </div>
+    <script>
+      (function () {
+        function init() {
+          var info = document.getElementById('osm-credit-text');
+          var button = document.getElementById('osm-credit-button');
+          if (!info || !button) return;
+          function show(value) {
+            info.classList.toggle('osm-hidden', !value);
+            button.setAttribute('aria-expanded', String(value));
+          }
+          button.addEventListener('click', function(){ show(info.classList.contains('osm-hidden')); });
+          setTimeout(function(){ show(false); }, 5000);
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+        else init();
+      })();
+    </script>
+    
+    
+            <div class="folium-map" id="map_4dcb2d69e3d88df6cfbf81e90e750c91" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4dcb2d69e3d88df6cfbf81e90e750c91 = L.map(
+                "map_4dcb2d69e3d88df6cfbf81e90e750c91",
+                {
+                    center: [53.240459381394956, 50.22633700336079],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 11,
+  "zoomControl": true,
+  "preferCanvas": true,
+  "attributionControl": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_0aa67fd1e560673306264ee24980b744 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_0aa67fd1e560673306264ee24980b744.addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+            var circle_marker_926df6a206e74b84d6dbb43c6981c3af = L.circleMarker(
+                [53.320872, 50.299742],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_31594431843e532dd9431563a79e244c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_45153860a5a90824b18076115c6f7e5b = $(`<div id="html_45153860a5a90824b18076115c6f7e5b" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Мира, 1</div></div>`)[0];
+                popup_31594431843e532dd9431563a79e244c.setContent(html_45153860a5a90824b18076115c6f7e5b);
+            
+        
+
+        circle_marker_926df6a206e74b84d6dbb43c6981c3af.bindPopup(popup_31594431843e532dd9431563a79e244c)
+        ;
+
+        
+    
+    
+            circle_marker_926df6a206e74b84d6dbb43c6981c3af.bindTooltip(
+                `<div>
+                     Мира, 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e4fcb18419bcf6e1074280061ce5c64 = L.circleMarker(
+                [53.116399, 50.166599],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_e27748b18b7ff3ee1aca118a8d24bce3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_50540c1320927892d3b599de3d3337a8 = $(`<div id="html_50540c1320927892d3b599de3d3337a8" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Южное шоссе - Николаевский проспект, 1А</div></div>`)[0];
+                popup_e27748b18b7ff3ee1aca118a8d24bce3.setContent(html_50540c1320927892d3b599de3d3337a8);
+            
+        
+
+        circle_marker_4e4fcb18419bcf6e1074280061ce5c64.bindPopup(popup_e27748b18b7ff3ee1aca118a8d24bce3)
+        ;
+
+        
+    
+    
+            circle_marker_4e4fcb18419bcf6e1074280061ce5c64.bindTooltip(
+                `<div>
+                     Южное шоссе - Николаевский проспект, 1А
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3414dbe214936395707399e7ad7a6794 = L.circleMarker(
+                [53.242629, 50.33688],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_c5d6d496940774ade082768de1b21625 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_266af0e28dc6b207094aaa979ea3c289 = $(`<div id="html_266af0e28dc6b207094aaa979ea3c289" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Аэропортовское шоссе, 76 - Транзитная</div></div>`)[0];
+                popup_c5d6d496940774ade082768de1b21625.setContent(html_266af0e28dc6b207094aaa979ea3c289);
+            
+        
+
+        circle_marker_3414dbe214936395707399e7ad7a6794.bindPopup(popup_c5d6d496940774ade082768de1b21625)
+        ;
+
+        
+    
+    
+            circle_marker_3414dbe214936395707399e7ad7a6794.bindTooltip(
+                `<div>
+                     Аэропортовское шоссе, 76 - Транзитная
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_395d8233e381d97323e45a540295a89e = L.circleMarker(
+                [53.178589, 50.189849],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_79023f40e612ae36c2cc96cbd7051452 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_61a64869b719e0b1d902a1f09b2a7e4e = $(`<div id="html_61a64869b719e0b1d902a1f09b2a7e4e" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Промышленности - Южный проезд, 88</div></div>`)[0];
+                popup_79023f40e612ae36c2cc96cbd7051452.setContent(html_61a64869b719e0b1d902a1f09b2a7e4e);
+            
+        
+
+        circle_marker_395d8233e381d97323e45a540295a89e.bindPopup(popup_79023f40e612ae36c2cc96cbd7051452)
+        ;
+
+        
+    
+    
+            circle_marker_395d8233e381d97323e45a540295a89e.bindTooltip(
+                `<div>
+                     Промышленности - Южный проезд, 88
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de88d82f16dd290d1032db1e6b41ac5f = L.circleMarker(
+                [53.203556, 50.268067],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_1f76bd16eb3bb5418a7306b1eb400177 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eeb089278816dd7e5011f9f00b21e15d = $(`<div id="html_eeb089278816dd7e5011f9f00b21e15d" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Заводское шоссе, 29</div></div>`)[0];
+                popup_1f76bd16eb3bb5418a7306b1eb400177.setContent(html_eeb089278816dd7e5011f9f00b21e15d);
+            
+        
+
+        circle_marker_de88d82f16dd290d1032db1e6b41ac5f.bindPopup(popup_1f76bd16eb3bb5418a7306b1eb400177)
+        ;
+
+        
+    
+    
+            circle_marker_de88d82f16dd290d1032db1e6b41ac5f.bindTooltip(
+                `<div>
+                     Заводское шоссе, 29
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5e49e340b48ec07d38c2f4a7395064c6 = L.circleMarker(
+                [53.166311, 50.073468],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_525799fc559c7c372567f1c3bd6cf23e = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b65f787f55b6f8922bc02c940db516e6 = $(`<div id="html_b65f787f55b6f8922bc02c940db516e6" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Главная, 23А</div></div>`)[0];
+                popup_525799fc559c7c372567f1c3bd6cf23e.setContent(html_b65f787f55b6f8922bc02c940db516e6);
+            
+        
+
+        circle_marker_5e49e340b48ec07d38c2f4a7395064c6.bindPopup(popup_525799fc559c7c372567f1c3bd6cf23e)
+        ;
+
+        
+    
+    
+            circle_marker_5e49e340b48ec07d38c2f4a7395064c6.bindTooltip(
+                `<div>
+                     Главная, 23А
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b826979a1bc8b24f7c9e7c6d79be10e0 = L.circleMarker(
+                [53.226474, 50.287307],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_48b4d2e7309f8d0f87859f6526ef3b65 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_18da7cdd11a057700681b0f3d3ff7ebe = $(`<div id="html_18da7cdd11a057700681b0f3d3ff7ebe" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Зубчаниновское шоссе, 179</div></div>`)[0];
+                popup_48b4d2e7309f8d0f87859f6526ef3b65.setContent(html_18da7cdd11a057700681b0f3d3ff7ebe);
+            
+        
+
+        circle_marker_b826979a1bc8b24f7c9e7c6d79be10e0.bindPopup(popup_48b4d2e7309f8d0f87859f6526ef3b65)
+        ;
+
+        
+    
+    
+            circle_marker_b826979a1bc8b24f7c9e7c6d79be10e0.bindTooltip(
+                `<div>
+                     Зубчаниновское шоссе, 179
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_706c10d7bdc6919c3df9cfe95821410c = L.circleMarker(
+                [53.23297, 50.30844],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_277be9c42f9a33e6ff07a8495e0db145 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ed908c7c22eeafa57d78203c45cd9a02 = $(`<div id="html_ed908c7c22eeafa57d78203c45cd9a02" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Магистральная, 27А - Зубчаниновское шоссе</div></div>`)[0];
+                popup_277be9c42f9a33e6ff07a8495e0db145.setContent(html_ed908c7c22eeafa57d78203c45cd9a02);
+            
+        
+
+        circle_marker_706c10d7bdc6919c3df9cfe95821410c.bindPopup(popup_277be9c42f9a33e6ff07a8495e0db145)
+        ;
+
+        
+    
+    
+            circle_marker_706c10d7bdc6919c3df9cfe95821410c.bindTooltip(
+                `<div>
+                     Магистральная, 27А - Зубчаниновское шоссе
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cb24c22b67c59f5f002fcc4f1f78e811 = L.circleMarker(
+                [53.24566, 50.194056],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_44fdc636de809d9128eac89a7af3f9eb = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d6b3328476401f9dcf52c09548ea9273 = $(`<div id="html_d6b3328476401f9dcf52c09548ea9273" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Солнечная, 23</div></div>`)[0];
+                popup_44fdc636de809d9128eac89a7af3f9eb.setContent(html_d6b3328476401f9dcf52c09548ea9273);
+            
+        
+
+        circle_marker_cb24c22b67c59f5f002fcc4f1f78e811.bindPopup(popup_44fdc636de809d9128eac89a7af3f9eb)
+        ;
+
+        
+    
+    
+            circle_marker_cb24c22b67c59f5f002fcc4f1f78e811.bindTooltip(
+                `<div>
+                     Солнечная, 23
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ca318d36ff55abe0a7b547eef59d587 = L.circleMarker(
+                [53.201346, 50.218632],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_0db8f8bbe46b5aed3550f12330c93f39 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_9305914f74d312a9ca31cb274588f501 = $(`<div id="html_9305914f74d312a9ca31cb274588f501" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Гагарина/ Девятого Мая проезд</div></div>`)[0];
+                popup_0db8f8bbe46b5aed3550f12330c93f39.setContent(html_9305914f74d312a9ca31cb274588f501);
+            
+        
+
+        circle_marker_1ca318d36ff55abe0a7b547eef59d587.bindPopup(popup_0db8f8bbe46b5aed3550f12330c93f39)
+        ;
+
+        
+    
+    
+            circle_marker_1ca318d36ff55abe0a7b547eef59d587.bindTooltip(
+                `<div>
+                     Гагарина/ Девятого Мая проезд
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_62b351960660af111b3cd638d23057d8 = L.circleMarker(
+                [53.221892, 50.165205],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_5700f440c57907851bf7640216d7256d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f07b298e49308e607c0ed9d375b00fe0 = $(`<div id="html_f07b298e49308e607c0ed9d375b00fe0" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Ново-садовая, 154 (Овраг Подпольщиков)</div></div>`)[0];
+                popup_5700f440c57907851bf7640216d7256d.setContent(html_f07b298e49308e607c0ed9d375b00fe0);
+            
+        
+
+        circle_marker_62b351960660af111b3cd638d23057d8.bindPopup(popup_5700f440c57907851bf7640216d7256d)
+        ;
+
+        
+    
+    
+            circle_marker_62b351960660af111b3cd638d23057d8.bindTooltip(
+                `<div>
+                     Ново-садовая, 154 (Овраг Подпольщиков)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1b44ad11d3831f4090addda443683bc6 = L.circleMarker(
+                [53.264341, 50.210629],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_ddc997ce125495e7cc79252710c89637 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b411853761a36255c7aba968f7bc9a87 = $(`<div id="html_b411853761a36255c7aba968f7bc9a87" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Солнечная/ Девятая малая просека</div></div>`)[0];
+                popup_ddc997ce125495e7cc79252710c89637.setContent(html_b411853761a36255c7aba968f7bc9a87);
+            
+        
+
+        circle_marker_1b44ad11d3831f4090addda443683bc6.bindPopup(popup_ddc997ce125495e7cc79252710c89637)
+        ;
+
+        
+    
+    
+            circle_marker_1b44ad11d3831f4090addda443683bc6.bindTooltip(
+                `<div>
+                     Солнечная/ Девятая малая просека
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1708872d7919120a2550e59c1e790977 = L.circleMarker(
+                [53.200466, 50.190507],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_58741ae1b1927fce65622627932dc363 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_640bcceea9adedef10e6b985e02f7544 = $(`<div id="html_640bcceea9adedef10e6b985e02f7544" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Авроры, 159 - Гагарина</div></div>`)[0];
+                popup_58741ae1b1927fce65622627932dc363.setContent(html_640bcceea9adedef10e6b985e02f7544);
+            
+        
+
+        circle_marker_1708872d7919120a2550e59c1e790977.bindPopup(popup_58741ae1b1927fce65622627932dc363)
+        ;
+
+        
+    
+    
+            circle_marker_1708872d7919120a2550e59c1e790977.bindTooltip(
+                `<div>
+                     Авроры, 159 - Гагарина
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8afe8f0cc9c8795c19cacd7d2218c17a = L.circleMarker(
+                [53.29833, 50.243962],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_12fde363b1599f86686d0c131812c8a4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7a9d8643101bca5c20d95195e75f496b = $(`<div id="html_7a9d8643101bca5c20d95195e75f496b" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Волжское шоссе / 8 линия</div></div>`)[0];
+                popup_12fde363b1599f86686d0c131812c8a4.setContent(html_7a9d8643101bca5c20d95195e75f496b);
+            
+        
+
+        circle_marker_8afe8f0cc9c8795c19cacd7d2218c17a.bindPopup(popup_12fde363b1599f86686d0c131812c8a4)
+        ;
+
+        
+    
+    
+            circle_marker_8afe8f0cc9c8795c19cacd7d2218c17a.bindTooltip(
+                `<div>
+                     Волжское шоссе / 8 линия
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59d697c2387d07ccee6d6fe220c7b2a6 = L.circleMarker(
+                [53.306287282194, 50.290474891663],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_aacbd2f1de26f2f638aa6a20d68a3cde = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8180e6c02578edd88ede9c1ff6504ea6 = $(`<div id="html_8180e6c02578edd88ede9c1ff6504ea6" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Московское шоссе, 20 км, 75б</div></div>`)[0];
+                popup_aacbd2f1de26f2f638aa6a20d68a3cde.setContent(html_8180e6c02578edd88ede9c1ff6504ea6);
+            
+        
+
+        circle_marker_59d697c2387d07ccee6d6fe220c7b2a6.bindPopup(popup_aacbd2f1de26f2f638aa6a20d68a3cde)
+        ;
+
+        
+    
+    
+            circle_marker_59d697c2387d07ccee6d6fe220c7b2a6.bindTooltip(
+                `<div>
+                     Московское шоссе, 20 км, 75б
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cef540e11b7e84a7a43ce3de5a2c906f = L.circleMarker(
+                [53.426475, 50.120625],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_761287d5f8aec8f88d36184a3ba41a22 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_78064336a9ffe4719079f2ad51771387 = $(`<div id="html_78064336a9ffe4719079f2ad51771387" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Максима Горького, 18 (пос. Волжский)</div></div>`)[0];
+                popup_761287d5f8aec8f88d36184a3ba41a22.setContent(html_78064336a9ffe4719079f2ad51771387);
+            
+        
+
+        circle_marker_cef540e11b7e84a7a43ce3de5a2c906f.bindPopup(popup_761287d5f8aec8f88d36184a3ba41a22)
+        ;
+
+        
+    
+    
+            circle_marker_cef540e11b7e84a7a43ce3de5a2c906f.bindTooltip(
+                `<div>
+                     Максима Горького, 18 (пос. Волжский)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_057f883b759203e7c4c34c00d9d33f44 = L.circleMarker(
+                [53.262735, 50.288759],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_60320c31e64ffeeae9dcd5c04dd606c8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_30ffb7ba8b6768435eb5ad0bafa309b8 = $(`<div id="html_30ffb7ba8b6768435eb5ad0bafa309b8" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Ракитовское шоссе, 1к1</div></div>`)[0];
+                popup_60320c31e64ffeeae9dcd5c04dd606c8.setContent(html_30ffb7ba8b6768435eb5ad0bafa309b8);
+            
+        
+
+        circle_marker_057f883b759203e7c4c34c00d9d33f44.bindPopup(popup_60320c31e64ffeeae9dcd5c04dd606c8)
+        ;
+
+        
+    
+    
+            circle_marker_057f883b759203e7c4c34c00d9d33f44.bindTooltip(
+                `<div>
+                     Ракитовское шоссе, 1к1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7b4640c5e9ff6642d8878c9bbac50094 = L.circleMarker(
+                [53.402354, 50.332217],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_84d61039ee13ab4bf09270f926a38c52 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5a690eb0ff84274b00d1a231a9dc5095 = $(`<div id="html_5a690eb0ff84274b00d1a231a9dc5095" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Самарская обл. м.р  Красноярский, федеральная  трасса М5,  ост. Новосемейкино (в  направлении  в  сторону  Самары)</div></div>`)[0];
+                popup_84d61039ee13ab4bf09270f926a38c52.setContent(html_5a690eb0ff84274b00d1a231a9dc5095);
+            
+        
+
+        circle_marker_7b4640c5e9ff6642d8878c9bbac50094.bindPopup(popup_84d61039ee13ab4bf09270f926a38c52)
+        ;
+
+        
+    
+    
+            circle_marker_7b4640c5e9ff6642d8878c9bbac50094.bindTooltip(
+                `<div>
+                     Самарская обл. м.р  Красноярский, федеральная  трасса М5,  ост. Новосемейкино (в  направлении  в  сторону  Самары)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_efe620232f2454bdd8ad765cd8cef777 = L.circleMarker(
+                [53.25966, 50.460921],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_bcb29cef27d798f487bf879c6916aa95 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_3246660795bf291442ca5178bcd17ecd = $(`<div id="html_3246660795bf291442ca5178bcd17ecd" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Самара Бугуруслан выезд из города, АЗС Лукойл</div></div>`)[0];
+                popup_bcb29cef27d798f487bf879c6916aa95.setContent(html_3246660795bf291442ca5178bcd17ecd);
+            
+        
+
+        circle_marker_efe620232f2454bdd8ad765cd8cef777.bindPopup(popup_bcb29cef27d798f487bf879c6916aa95)
+        ;
+
+        
+    
+    
+            circle_marker_efe620232f2454bdd8ad765cd8cef777.bindTooltip(
+                `<div>
+                     Самара Бугуруслан выезд из города, АЗС Лукойл
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd0aef7f52996b173c324371ee10acb9 = L.circleMarker(
+                [53.256995, 50.372817],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_23da049181b982e28f2d94da1070700c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ab5ed07c3a80e4a71d596bb3982a64da = $(`<div id="html_ab5ed07c3a80e4a71d596bb3982a64da" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Самара -Кинель, въезд в город, остановка Промзона</div></div>`)[0];
+                popup_23da049181b982e28f2d94da1070700c.setContent(html_ab5ed07c3a80e4a71d596bb3982a64da);
+            
+        
+
+        circle_marker_fd0aef7f52996b173c324371ee10acb9.bindPopup(popup_23da049181b982e28f2d94da1070700c)
+        ;
+
+        
+    
+    
+            circle_marker_fd0aef7f52996b173c324371ee10acb9.bindTooltip(
+                `<div>
+                     Самара -Кинель, въезд в город, остановка Промзона
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_26f0d3ba64468fdbfbcb0621c61025f2 = L.circleMarker(
+                [53.238315, 50.227105],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_fe23d68da90df17fb20b15bfe1e783a1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_89a48a6df6306fc5d3ac251befca545d = $(`<div id="html_89a48a6df6306fc5d3ac251befca545d" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Стара-Загора, 151а</div></div>`)[0];
+                popup_fe23d68da90df17fb20b15bfe1e783a1.setContent(html_89a48a6df6306fc5d3ac251befca545d);
+            
+        
+
+        circle_marker_26f0d3ba64468fdbfbcb0621c61025f2.bindPopup(popup_fe23d68da90df17fb20b15bfe1e783a1)
+        ;
+
+        
+    
+    
+            circle_marker_26f0d3ba64468fdbfbcb0621c61025f2.bindTooltip(
+                `<div>
+                     Стара-Загора, 151а
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af1f08c24705d77fd44056ae3fda1462 = L.circleMarker(
+                [53.212766577273, 50.248036980629],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_45e862ec93abb196365b8bfdf3a88ac5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bd9934d3ac3d6c935aa6c986383b4e96 = $(`<div id="html_bd9934d3ac3d6c935aa6c986383b4e96" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Победы ул., д. 92 а</div></div>`)[0];
+                popup_45e862ec93abb196365b8bfdf3a88ac5.setContent(html_bd9934d3ac3d6c935aa6c986383b4e96);
+            
+        
+
+        circle_marker_af1f08c24705d77fd44056ae3fda1462.bindPopup(popup_45e862ec93abb196365b8bfdf3a88ac5)
+        ;
+
+        
+    
+    
+            circle_marker_af1f08c24705d77fd44056ae3fda1462.bindTooltip(
+                `<div>
+                     Победы ул., д. 92 а
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c7d9157e1afe0b6d5ca50909465e9673 = L.circleMarker(
+                [53.28424, 50.28168],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_0942f37755405610ebe831dce7400de6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_59e608175e5d113a6f9340febea0a6c4 = $(`<div id="html_59e608175e5d113a6f9340febea0a6c4" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Московское шоссе, 19 км/ Анжерская ул., д. 37</div></div>`)[0];
+                popup_0942f37755405610ebe831dce7400de6.setContent(html_59e608175e5d113a6f9340febea0a6c4);
+            
+        
+
+        circle_marker_c7d9157e1afe0b6d5ca50909465e9673.bindPopup(popup_0942f37755405610ebe831dce7400de6)
+        ;
+
+        
+    
+    
+            circle_marker_c7d9157e1afe0b6d5ca50909465e9673.bindTooltip(
+                `<div>
+                     Московское шоссе, 19 км/ Анжерская ул., д. 37
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ad8fdd6fc27cfa5f915280feb634d62 = L.circleMarker(
+                [53.190264, 50.114055],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_5b4a6b51c0764e858c3e743c850887f0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_22cfe5a149f6118992ac8c15ea6e61f7 = $(`<div id="html_22cfe5a149f6118992ac8c15ea6e61f7" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Красноармейская ул./ Арцыбушевская ул.</div></div>`)[0];
+                popup_5b4a6b51c0764e858c3e743c850887f0.setContent(html_22cfe5a149f6118992ac8c15ea6e61f7);
+            
+        
+
+        circle_marker_3ad8fdd6fc27cfa5f915280feb634d62.bindPopup(popup_5b4a6b51c0764e858c3e743c850887f0)
+        ;
+
+        
+    
+    
+            circle_marker_3ad8fdd6fc27cfa5f915280feb634d62.bindTooltip(
+                `<div>
+                     Красноармейская ул./ Арцыбушевская ул.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9bdb1b2120b2356670eaf4be2324d90e = L.circleMarker(
+                [53.200641, 50.152406],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_9a576fe0feff8ac43ed1608580f3a903 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_35707f056f84b54e74853630bd4fb85f = $(`<div id="html_35707f056f84b54e74853630bd4fb85f" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Киевская ул., д. 10</div></div>`)[0];
+                popup_9a576fe0feff8ac43ed1608580f3a903.setContent(html_35707f056f84b54e74853630bd4fb85f);
+            
+        
+
+        circle_marker_9bdb1b2120b2356670eaf4be2324d90e.bindPopup(popup_9a576fe0feff8ac43ed1608580f3a903)
+        ;
+
+        
+    
+    
+            circle_marker_9bdb1b2120b2356670eaf4be2324d90e.bindTooltip(
+                `<div>
+                     Киевская ул., д. 10
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_cbd0274948af0cda15f26ae72b44d51d = L.circleMarker(
+                [53.213463, 50.225992],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_f250a613a29441adb52eaa092d2af4b7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_97c16faaa0e54f0ebdc1ef580fd9d349 = $(`<div id="html_97c16faaa0e54f0ebdc1ef580fd9d349" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Двадцать Второго Партсъезда/ Антонова-Овсеенко</div></div>`)[0];
+                popup_f250a613a29441adb52eaa092d2af4b7.setContent(html_97c16faaa0e54f0ebdc1ef580fd9d349);
+            
+        
+
+        circle_marker_cbd0274948af0cda15f26ae72b44d51d.bindPopup(popup_f250a613a29441adb52eaa092d2af4b7)
+        ;
+
+        
+    
+    
+            circle_marker_cbd0274948af0cda15f26ae72b44d51d.bindTooltip(
+                `<div>
+                     Двадцать Второго Партсъезда/ Антонова-Овсеенко
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3c6691abbfe988509eb071c0102ca9e1 = L.circleMarker(
+                [53.3828, 50.16615],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_54120b72e1918e10fb80cbf8c3736af9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0245ed8c887cb96c69b4bf7e2618eabf = $(`<div id="html_0245ed8c887cb96c69b4bf7e2618eabf" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Красноглинское шоссе, 92</div></div>`)[0];
+                popup_54120b72e1918e10fb80cbf8c3736af9.setContent(html_0245ed8c887cb96c69b4bf7e2618eabf);
+            
+        
+
+        circle_marker_3c6691abbfe988509eb071c0102ca9e1.bindPopup(popup_54120b72e1918e10fb80cbf8c3736af9)
+        ;
+
+        
+    
+    
+            circle_marker_3c6691abbfe988509eb071c0102ca9e1.bindTooltip(
+                `<div>
+                     Красноглинское шоссе, 92
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3d4c462f993be55e1924b204fb772f88 = L.circleMarker(
+                [53.269698460507, 50.255477428434],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_26a748e75b05b3b320ac17c3e573fc7d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b216076d72fa8cb537d8ea32bd01ac1d = $(`<div id="html_b216076d72fa8cb537d8ea32bd01ac1d" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Московское ш., 17 км, д. 4а (ресторан Старый замок, 200 м до Алма-Атинской ул.)</div></div>`)[0];
+                popup_26a748e75b05b3b320ac17c3e573fc7d.setContent(html_b216076d72fa8cb537d8ea32bd01ac1d);
+            
+        
+
+        circle_marker_3d4c462f993be55e1924b204fb772f88.bindPopup(popup_26a748e75b05b3b320ac17c3e573fc7d)
+        ;
+
+        
+    
+    
+            circle_marker_3d4c462f993be55e1924b204fb772f88.bindTooltip(
+                `<div>
+                     Московское ш., 17 км, д. 4а (ресторан Старый замок, 200 м до Алма-Атинской ул.)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_301a7947ee4875515041af1b0cd0590c = L.circleMarker(
+                [53.272783842799, 50.27085185051],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_a584220c296e4e96dfeebe71b9730aad = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a590a4e8141f1b9609dce2dc26314497 = $(`<div id="html_a590a4e8141f1b9609dce2dc26314497" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Ракитовское шоссе, 1к1</div></div>`)[0];
+                popup_a584220c296e4e96dfeebe71b9730aad.setContent(html_a590a4e8141f1b9609dce2dc26314497);
+            
+        
+
+        circle_marker_301a7947ee4875515041af1b0cd0590c.bindPopup(popup_a584220c296e4e96dfeebe71b9730aad)
+        ;
+
+        
+    
+    
+            circle_marker_301a7947ee4875515041af1b0cd0590c.bindTooltip(
+                `<div>
+                     Ракитовское шоссе, 1к1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4d5e711e52324ca8421a6fb260833d52 = L.circleMarker(
+                [53.197567, 50.246888],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_e2349526452bf9d2f12466bc6ebb59f1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ea2e482e869330b41b3228090d42ead1 = $(`<div id="html_ea2e482e869330b41b3228090d42ead1" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Заводское шоссе 8 стр 2</div></div>`)[0];
+                popup_e2349526452bf9d2f12466bc6ebb59f1.setContent(html_ea2e482e869330b41b3228090d42ead1);
+            
+        
+
+        circle_marker_4d5e711e52324ca8421a6fb260833d52.bindPopup(popup_e2349526452bf9d2f12466bc6ebb59f1)
+        ;
+
+        
+    
+    
+            circle_marker_4d5e711e52324ca8421a6fb260833d52.bindTooltip(
+                `<div>
+                     Заводское шоссе 8 стр 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_830a61b2cadc19dd7dbf447077701739 = L.circleMarker(
+                [53.141748, 50.178684],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_4d9c3d576b5df5c9a8d8e9522896c4dd = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_fb6003900bcbed0b47648786555e29e7 = $(`<div id="html_fb6003900bcbed0b47648786555e29e7" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Южное шоссе, 5</div></div>`)[0];
+                popup_4d9c3d576b5df5c9a8d8e9522896c4dd.setContent(html_fb6003900bcbed0b47648786555e29e7);
+            
+        
+
+        circle_marker_830a61b2cadc19dd7dbf447077701739.bindPopup(popup_4d9c3d576b5df5c9a8d8e9522896c4dd)
+        ;
+
+        
+    
+    
+            circle_marker_830a61b2cadc19dd7dbf447077701739.bindTooltip(
+                `<div>
+                     Южное шоссе, 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_496599693b3bff0d3263a0e2a37b3365 = L.circleMarker(
+                [53.354401, 50.210778],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_61bf20c170c6f6996f82bcb147ba534b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5927c1aacf8683ea024ef471cb2df9d8 = $(`<div id="html_5927c1aacf8683ea024ef471cb2df9d8" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Красноглинское  ш. д.5 а</div></div>`)[0];
+                popup_61bf20c170c6f6996f82bcb147ba534b.setContent(html_5927c1aacf8683ea024ef471cb2df9d8);
+            
+        
+
+        circle_marker_496599693b3bff0d3263a0e2a37b3365.bindPopup(popup_61bf20c170c6f6996f82bcb147ba534b)
+        ;
+
+        
+    
+    
+            circle_marker_496599693b3bff0d3263a0e2a37b3365.bindTooltip(
+                `<div>
+                     Красноглинское  ш. д.5 а
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_76e181dd66e28e998014704d8ba557b8 = L.circleMarker(
+                [53.23157, 50.203533],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_afb5e428590715ca2606028b4759bf72 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_132db31ff6269164d428042501d9b0b1 = $(`<div id="html_132db31ff6269164d428042501d9b0b1" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Двадцать Второго Партсъезда ул., д. 191 к  ТЦ &quot;Парк Хаус&quot;</div></div>`)[0];
+                popup_afb5e428590715ca2606028b4759bf72.setContent(html_132db31ff6269164d428042501d9b0b1);
+            
+        
+
+        circle_marker_76e181dd66e28e998014704d8ba557b8.bindPopup(popup_afb5e428590715ca2606028b4759bf72)
+        ;
+
+        
+    
+    
+            circle_marker_76e181dd66e28e998014704d8ba557b8.bindTooltip(
+                `<div>
+                     Двадцать Второго Партсъезда ул., д. 191 к  ТЦ &quot;Парк Хаус&quot;
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d4f868d6361579b2e7827d32f941d59b = L.circleMarker(
+                [53.136717, 50.103954],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_63122b73281ebeaf170f8cb7bcb7d430 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c8ed2cbe64110e9dedd7f43f891175ae = $(`<div id="html_c8ed2cbe64110e9dedd7f43f891175ae" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Новокуйбышевское шоссе, 2В - Кряжское шоссе</div></div>`)[0];
+                popup_63122b73281ebeaf170f8cb7bcb7d430.setContent(html_c8ed2cbe64110e9dedd7f43f891175ae);
+            
+        
+
+        circle_marker_d4f868d6361579b2e7827d32f941d59b.bindPopup(popup_63122b73281ebeaf170f8cb7bcb7d430)
+        ;
+
+        
+    
+    
+            circle_marker_d4f868d6361579b2e7827d32f941d59b.bindTooltip(
+                `<div>
+                     Новокуйбышевское шоссе, 2В - Кряжское шоссе
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_78b55a0be4306fa7485dc38191e37b46 = L.circleMarker(
+                [53.225399, 50.233379],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_faee078db475858f5e1dc15ec605a433 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_18f62a22a374ebab4b4811d238ea51c7 = $(`<div id="html_18f62a22a374ebab4b4811d238ea51c7" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Ново-Вокзальная ул./ Нагорная ул.</div></div>`)[0];
+                popup_faee078db475858f5e1dc15ec605a433.setContent(html_18f62a22a374ebab4b4811d238ea51c7);
+            
+        
+
+        circle_marker_78b55a0be4306fa7485dc38191e37b46.bindPopup(popup_faee078db475858f5e1dc15ec605a433)
+        ;
+
+        
+    
+    
+            circle_marker_78b55a0be4306fa7485dc38191e37b46.bindTooltip(
+                `<div>
+                     Ново-Вокзальная ул./ Нагорная ул.
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e8bde5a521b56be56cf56f0553a30ab1 = L.circleMarker(
+                [53.250041, 50.26761],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_ebfa381c6b86d186f63f56d63a7ebd97 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_ecf253aadec36608ff91f13a73e3335c = $(`<div id="html_ecf253aadec36608ff91f13a73e3335c" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Алма-Атинская ул. - Карла Маркса пр, шинный центр ТАГАНКА</div></div>`)[0];
+                popup_ebfa381c6b86d186f63f56d63a7ebd97.setContent(html_ecf253aadec36608ff91f13a73e3335c);
+            
+        
+
+        circle_marker_e8bde5a521b56be56cf56f0553a30ab1.bindPopup(popup_ebfa381c6b86d186f63f56d63a7ebd97)
+        ;
+
+        
+    
+    
+            circle_marker_e8bde5a521b56be56cf56f0553a30ab1.bindTooltip(
+                `<div>
+                     Алма-Атинская ул. - Карла Маркса пр, шинный центр ТАГАНКА
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d96dff07e05081c2b09e76e62be2b348 = L.circleMarker(
+                [53.21857, 50.206586],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_1588c2dc2ce4fb46e048f8cb998e085c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b7437f9fea5795fbea639d63ce09e01c = $(`<div id="html_b7437f9fea5795fbea639d63ce09e01c" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Советской Армии ул., д. 165, м-н ТРИАЛСПОРТ</div></div>`)[0];
+                popup_1588c2dc2ce4fb46e048f8cb998e085c.setContent(html_b7437f9fea5795fbea639d63ce09e01c);
+            
+        
+
+        circle_marker_d96dff07e05081c2b09e76e62be2b348.bindPopup(popup_1588c2dc2ce4fb46e048f8cb998e085c)
+        ;
+
+        
+    
+    
+            circle_marker_d96dff07e05081c2b09e76e62be2b348.bindTooltip(
+                `<div>
+                     Советской Армии ул., д. 165, м-н ТРИАЛСПОРТ
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ff3929d53aa5aad63e8189be1e841a9e = L.circleMarker(
+                [53.284911, 50.227111],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_030a30e5ba40cf5b157f52c4278744c3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7e87699b8202edcbe581daf7371b2e1e = $(`<div id="html_7e87699b8202edcbe581daf7371b2e1e" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Демократическая ул., д. 45 а к 1</div></div>`)[0];
+                popup_030a30e5ba40cf5b157f52c4278744c3.setContent(html_7e87699b8202edcbe581daf7371b2e1e);
+            
+        
+
+        circle_marker_ff3929d53aa5aad63e8189be1e841a9e.bindPopup(popup_030a30e5ba40cf5b157f52c4278744c3)
+        ;
+
+        
+    
+    
+            circle_marker_ff3929d53aa5aad63e8189be1e841a9e.bindTooltip(
+                `<div>
+                     Демократическая ул., д. 45 а к 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f653f82b857a9c76b4c09d8d419d291f = L.circleMarker(
+                [53.216479, 50.149313],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_93cc6bc7aea1c41abd9a978a0bcb8cf9 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0ae157a4d61e0c09cac2ab787f340786 = $(`<div id="html_0ae157a4d61e0c09cac2ab787f340786" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Ново-Садовая ул./ Масленникова пр.,ТД ЗАХАР призматрон</div></div>`)[0];
+                popup_93cc6bc7aea1c41abd9a978a0bcb8cf9.setContent(html_0ae157a4d61e0c09cac2ab787f340786);
+            
+        
+
+        circle_marker_f653f82b857a9c76b4c09d8d419d291f.bindPopup(popup_93cc6bc7aea1c41abd9a978a0bcb8cf9)
+        ;
+
+        
+    
+    
+            circle_marker_f653f82b857a9c76b4c09d8d419d291f.bindTooltip(
+                `<div>
+                     Ново-Садовая ул./ Масленникова пр.,ТД ЗАХАР призматрон
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4cd40dafb90899b1ea7d34c1fec10358 = L.circleMarker(
+                [53.220565, 50.261312],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_6e2c1e02c26d515a4e1f5f20331e55d6 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_45108511d6b6d8ecb8342de4fd5fa900 = $(`<div id="html_45108511d6b6d8ecb8342de4fd5fa900" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Кирова пр., д. 153, Победы ул., ТРК ВиваЛэнд</div></div>`)[0];
+                popup_6e2c1e02c26d515a4e1f5f20331e55d6.setContent(html_45108511d6b6d8ecb8342de4fd5fa900);
+            
+        
+
+        circle_marker_4cd40dafb90899b1ea7d34c1fec10358.bindPopup(popup_6e2c1e02c26d515a4e1f5f20331e55d6)
+        ;
+
+        
+    
+    
+            circle_marker_4cd40dafb90899b1ea7d34c1fec10358.bindTooltip(
+                `<div>
+                     Кирова пр., д. 153, Победы ул., ТРК ВиваЛэнд
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c87a551eb0de6b79092f3711cb038648 = L.circleMarker(
+                [53.252199, 50.22197],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_ee77cc47098d105f803e105b2c452dde = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eb8666c43db0b446673617f877ad3e32 = $(`<div id="html_eb8666c43db0b446673617f877ad3e32" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Московское ш. - Кирова пр., д. 401</div></div>`)[0];
+                popup_ee77cc47098d105f803e105b2c452dde.setContent(html_eb8666c43db0b446673617f877ad3e32);
+            
+        
+
+        circle_marker_c87a551eb0de6b79092f3711cb038648.bindPopup(popup_ee77cc47098d105f803e105b2c452dde)
+        ;
+
+        
+    
+    
+            circle_marker_c87a551eb0de6b79092f3711cb038648.bindTooltip(
+                `<div>
+                     Московское ш. - Кирова пр., д. 401
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3feb7b37e9bf98e8c0ea188f2ef1e736 = L.circleMarker(
+                [53.229671, 50.179188],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_635e39ba62f34a37f691ba07f8b4ddef = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c17cadd45ea392a42892e44055e1564c = $(`<div id="html_c17cadd45ea392a42892e44055e1564c" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Н.Садовая, 257 - Потапова, (за Потапова)_статика</div></div>`)[0];
+                popup_635e39ba62f34a37f691ba07f8b4ddef.setContent(html_c17cadd45ea392a42892e44055e1564c);
+            
+        
+
+        circle_marker_3feb7b37e9bf98e8c0ea188f2ef1e736.bindPopup(popup_635e39ba62f34a37f691ba07f8b4ddef)
+        ;
+
+        
+    
+    
+            circle_marker_3feb7b37e9bf98e8c0ea188f2ef1e736.bindTooltip(
+                `<div>
+                     Н.Садовая, 257 - Потапова, (за Потапова)_статика
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_206e7a6fb7f3997cdef23fff05901ee0 = L.circleMarker(
+                [53.24793, 50.246092],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_bde3b3383b32a16f5dc1faea8ec71f8d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_4351d8c61ac9b5f4f73afcbe49073fba = $(`<div id="html_4351d8c61ac9b5f4f73afcbe49073fba" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Стара-Загора ул., д.255</div></div>`)[0];
+                popup_bde3b3383b32a16f5dc1faea8ec71f8d.setContent(html_4351d8c61ac9b5f4f73afcbe49073fba);
+            
+        
+
+        circle_marker_206e7a6fb7f3997cdef23fff05901ee0.bindPopup(popup_bde3b3383b32a16f5dc1faea8ec71f8d)
+        ;
+
+        
+    
+    
+            circle_marker_206e7a6fb7f3997cdef23fff05901ee0.bindTooltip(
+                `<div>
+                     Стара-Загора ул., д.255
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_90a11a2ad5343eb20d4da98f4c690a60 = L.circleMarker(
+                [53.212097, 50.126208],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_10b74d08717cd0813c6dc813d8537477 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_16178b1d389fc73188b6887f2847fbde = $(`<div id="html_16178b1d389fc73188b6887f2847fbde" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Лесная ул., д. 23, напр. КинАп</div></div>`)[0];
+                popup_10b74d08717cd0813c6dc813d8537477.setContent(html_16178b1d389fc73188b6887f2847fbde);
+            
+        
+
+        circle_marker_90a11a2ad5343eb20d4da98f4c690a60.bindPopup(popup_10b74d08717cd0813c6dc813d8537477)
+        ;
+
+        
+    
+    
+            circle_marker_90a11a2ad5343eb20d4da98f4c690a60.bindTooltip(
+                `<div>
+                     Лесная ул., д. 23, напр. КинАп
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a6bb72bb0c63764830eb46fe5dd4b726 = L.circleMarker(
+                [53.101494, 50.161648],
+                {"bubblingMouseEvents": true, "color": "#1677d2", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#ffffff", "fillOpacity": 1, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4, "stroke": true, "weight": 1.5}
+            ).addTo(map_4dcb2d69e3d88df6cfbf81e90e750c91);
+        
+    
+        var popup_323a34b82f3ef9a498c8760e5e57450a = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_50c08282ad6405dc1ebd13179e41d36e = $(`<div id="html_50c08282ad6405dc1ebd13179e41d36e" style="width: 100.0%; height: 100.0%;"><div style='max-width:320px;overflow-wrap:anywhere'>Самарская область, м.р. Волжский, Южное шоссе, перед въездом в мкр. Южный город-2 в сторону г. Самара</div></div>`)[0];
+                popup_323a34b82f3ef9a498c8760e5e57450a.setContent(html_50c08282ad6405dc1ebd13179e41d36e);
+            
+        
+
+        circle_marker_a6bb72bb0c63764830eb46fe5dd4b726.bindPopup(popup_323a34b82f3ef9a498c8760e5e57450a)
+        ;
+
+        
+    
+    
+            circle_marker_a6bb72bb0c63764830eb46fe5dd4b726.bindTooltip(
+                `<div>
+                     Самарская область, м.р. Волжский, Южное шоссе, перед въездом в мкр. Южный город-2 в сторону г. Самара
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            map_4dcb2d69e3d88df6cfbf81e90e750c91.fitBounds(
+                [[53.101494, 50.073468], [53.426475, 50.460921]],
+                {}
+            );
+        
+</script>
+</html>
